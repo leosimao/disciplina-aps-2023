@@ -1,0 +1,31 @@
+@startuml
+    left to right direction 
+    !theme cyborg
+
+    :Farmaceutico: as F1
+    :Caixa: as C1
+
+    
+
+    (Consultar cadastro \n de remédio) as UC002
+    (Verificar historico de \n venda) as UC003
+    /'
+    Devemos tomar cuidado para não confundir que um user case esteja estendendo de outra e sim é uma 
+    ampliação do user case que pode ser um novo user case.
+
+    Quando tenho uma seta do Princpal para o Secudário eu terei uma inclusão
+    Quando tenho uma seta do Secundário para o Principal eu teri uma extensão
+    '/
+    (Gerenciar Laboratório) as UC004
+    (Finalizar Venda) as UC005
+    (Atualizar Estoque) as UC006
+
+    C1 -- UC003
+    C1 -- UC005
+    F1 -- UC004
+    F1 -- UC002
+
+    UC005 ..> UC006 : <<include>>
+
+
+@enduml
